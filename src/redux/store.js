@@ -18,14 +18,14 @@ function loadFromLocalStorage() {
     const serializedState = localStorage.getItem("state");
     if (serializedState === null)
       return {
-        profileData: {},
+        profileData: [],
         repoData: [],
       };
     return JSON.parse(serializedState);
   } catch (e) {
     console.log(e);
     return {
-      profileData: {},
+      profileData: [],
       repoData: [],
     };
   }

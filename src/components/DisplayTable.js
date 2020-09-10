@@ -1,6 +1,5 @@
 import React from "react";
 import { Row, Col, Card, List, Divider } from "antd";
-import { connect } from "react-redux";
 
 const DisplayTable = ({ profileData, repoData }) => {
   const { Meta } = Card;
@@ -11,28 +10,7 @@ const DisplayTable = ({ profileData, repoData }) => {
   };
   return (
     <Row justify="space-around" align="middle">
-      <Col justify="center" xs={24} md={6}>
-        <Card
-          hoverable
-          style={{ width: 240 }}
-          cover={
-            <img
-              alt="example"
-              src={!profileData.avatar_url ? " " : profileData.avatar_url}
-            />
-          }
-        >
-          <Meta
-            title={profileData.name}
-            description={[
-              <div>
-                <p>Bio: {profileData.bio} </p>
-                <p>Location: {profileData.location}</p>
-              </div>,
-            ]}
-          />
-        </Card>
-      </Col>
+      
       <Col
         xs={24}
         md={6}
@@ -40,7 +18,7 @@ const DisplayTable = ({ profileData, repoData }) => {
           height: "700px",
         }}
       >
-        <Divider orientation="left">Large Size</Divider>
+        <Divider orientation="left">Repositories</Divider>
         <List
           style={{
             height: "600px",
@@ -66,9 +44,4 @@ const DisplayTable = ({ profileData, repoData }) => {
   );
 };
 
-const mapStateToProps = ({ profileData, repoData }) => ({
-  profileData,
-  repoData,
-});
-
-export default connect(mapStateToProps)(DisplayTable);
+export default DisplayTable;

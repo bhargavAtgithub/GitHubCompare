@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import DisplayTable from "./DisplayTable";
 import logo from "../assets/GitHub_Logo_White.png";
+import UserDisplay from "./UserDisplay";
 
 import { Layout, Menu, Breadcrumb, Input } from "antd";
 
@@ -66,7 +67,8 @@ const Profile = (props) => {
             enterButton
           />
         </Header>
-        <DisplayTable />
+        <UserDisplay />
+        {/* <DisplayTable /> */}
       </Layout>
     </>
   );
